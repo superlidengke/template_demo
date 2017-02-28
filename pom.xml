@@ -10,6 +10,7 @@
 	<properties>
 		<java-version>1.6</java-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<jerseyVersion>2.22.1</jerseyVersion>
 	</properties>
 	<dependencies>
 		 <dependency>
@@ -118,6 +119,46 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		<!-- jersey -->
+		 <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+             <version>${jerseyVersion}</version>
+<!--             <exclusions> -->
+<!--                 These exclusion are here to avoid the duplicate errors - these classes are also in Weld -->
+<!--                 <exclusion> -->
+<!--                     <groupId>javax.annotation</groupId> -->
+<!--                     <artifactId>javax.annotation-api</artifactId> -->
+<!--                 </exclusion> -->
+<!--                 <exclusion> -->
+<!--                     <groupId>org.glassfish.hk2.external</groupId> -->
+<!--                     <artifactId>javax.inject</artifactId> -->
+<!--                 </exclusion> -->
+<!--             </exclusions> -->
+        </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-jaxb</artifactId>
+             <version>${jerseyVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+             <version>${jerseyVersion}</version>
+            <exclusions>
+                <!-- These exclusion are here to avoid the duplicate errors - these classes are also in Weld -->
+                <exclusion>
+                    <groupId>javax.annotation</groupId>
+                    <artifactId>javax.annotation-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.glassfish.hk2.external</groupId>
+                    <artifactId>javax.inject</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>   
 	
 		<!-- Test -->
 		<dependency>
@@ -136,6 +177,7 @@
       <name>Company Repository</name>
       <url>https://bams-apac-sami.int.thomsonreuters.com/artifactory/default.maven.local/com/tr/bjjenkins</url>
     </repository>
+   
   </repositories>
     <build>
         <plugins>

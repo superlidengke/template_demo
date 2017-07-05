@@ -21,7 +21,7 @@ public class UserServiceTest {
 	@Test
 	public void testGetUserById() {
 		User user = userService.getUserById("1");
-		System.out.println(user.getUser_name());
+		System.out.println(user);
 	}
 
 }

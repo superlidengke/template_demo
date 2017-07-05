@@ -1,5 +1,8 @@
+v0.3.1
+Put mapper file under resources
 v0.3
 Use resultMap when database column name is different with java field name
+
 v0.2
 sql in mapper.xml
 

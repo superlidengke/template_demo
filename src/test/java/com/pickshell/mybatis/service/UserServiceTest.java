@@ -22,6 +22,13 @@ public class UserServiceTest {
 	public void testGetUserById() {
 		User user = userService.getUserById("1");
 		System.out.println(user);
+		userService.getUserById("1");
+		userService.getUserById("1");
+		userService.getUserById("1");
+		userService.getUserById("1");
+		userService.getUserById("1");
+		userService.getUserById("1");
+		userService.getUserById("1");
 	}
 
 }

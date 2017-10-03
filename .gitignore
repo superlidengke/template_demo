@@ -16,3 +16,6 @@ dist
 /index
 test-output/
 /build
+/bin/
+.gradle
+.springBeans

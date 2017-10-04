@@ -1,6 +1,11 @@
 package com.pickshell.app;
+
 import static org.junit.Assert.assertNotNull;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.activiti.engine.IdentityService;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
 import org.activiti.engine.RepositoryService;
@@ -12,21 +17,27 @@ public class SimpleProcessTest {
 	
 	@Test
 	public void startBookOrder() {
-		ProcessEngine processEngine = ProcessEngineConfiguration
-			.createStandaloneInMemProcessEngineConfiguration()
-		 	.buildProcessEngine(); 
-		 
-		RuntimeService runtimeService = processEngine.getRuntimeService(); 
+		ProcessEngine processEngine = ProcessEngineConfiguration.createStandaloneInMemProcessEngineConfiguration()
+				// .createStandaloneProcessEngineConfiguration()
+				.buildProcessEngine();
+
 		RepositoryService repositoryService = processEngine.getRepositoryService();
-		repositoryService.createDeployment()
-				.addClasspathResource("bookorder.simple.bpmn20.xml")
-			.deploy();
-		
-		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(
-				"simplebookorder");
+		RuntimeService runtimeService = processEngine.getRuntimeService();
+		IdentityService identityService = processEngine.getIdentityService();
+		repositoryService.createDeployment().addClasspathResource("bookorder.bpmn20.xml").deploy();
+		Map<String, Object> variableMap = new HashMap<String, Object>();
+		variableMap.put("isbn", "123456");
+		identityService.setAuthenticatedUserId("kermit");
+		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("bookorder", variableMap);
 		assertNotNull(processInstance.getId());
-		System.out.println("id " + processInstance.getId() + " " 
-				+ processInstance.getProcessDefinitionId());
+		/*
+		 * TaskService taskService = processEngine.getTaskService(); List<Task>
+		 * taskList =
+		 * taskService.createTaskQuery().taskCandidateUser("kermit").list();
+		 * assertEquals(1, taskList.size()); System.out.println("found task " +
+		 * taskList.get(0).getName());
+		 * taskService.complete(taskList.get(0).getId());
+		 */
 	}
 
 }

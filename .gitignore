@@ -1,0 +1,16 @@
+target
+tmp
+.history
+dist
+/.idea
+/*.iml
+/out
+/.idea_modules
+/RUNNING_PID
+/.settings
+/index
+test-output/
+/build
+/bin
+.gradle/
+.springBeans

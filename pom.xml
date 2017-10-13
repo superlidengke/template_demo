@@ -125,13 +125,18 @@
             <artifactId>jersey-client</artifactId>
              <version>${jerseyVersion}</version>
         </dependency>
-        
+        <!-- xml rest api -->
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-jaxb</artifactId>
              <version>${jerseyVersion}</version>
         </dependency>
-
+        <!-- json rest api -->
+		<dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>${jerseyVersion}</version>
+        </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>

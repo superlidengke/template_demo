@@ -4,14 +4,23 @@ version '1.1-SNAPSHOT'
 apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: "jacoco"
-
+apply plugin: 'org.akhikhl.gretty'
 //apply plugin: 'codenarc'
 
 sourceCompatibility = 1.7
 
+buildscript {
+    repositories {
+        jcenter()
+    }
 
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -19,6 +28,9 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: junitVersion
     compile("org.springframework:spring-context:${springVersion}")
     testCompile("org.springframework:spring-test:${springVersion}")
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.springframework.security:spring-security-config:$springSecurityVersion"
+    compile "org.springframework.security:spring-security-web:$springSecurityVersion"
 }
 
 /*

@@ -1,7 +1,8 @@
 package springdi.service;
 
 import com.pickshell.CDPlayerConfig;
-import com.pickshell.springdi.service.MediaPlayer;
+import com.pickshell.springdi.service.MediaPlayer
+import com.pickshell.springdi.service.Mp4Player;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import static junit.framework.TestCase.assertNotNull;
 @ContextConfiguration(classes = CDPlayerConfig.class)
 public class AudioPlayerTest {
     @Autowired
-    private MediaPlayer player;
+    private Mp4Player player;
 
     @Test
     public void playerShouldNotBeNull(){

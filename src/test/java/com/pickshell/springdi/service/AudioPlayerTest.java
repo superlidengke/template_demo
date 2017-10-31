@@ -16,7 +16,7 @@ import static junit.framework.TestCase.assertNotNull;
 @ContextConfiguration(classes = CDPlayerConfig.class)
 public class AudioPlayerTest {
     @Autowired
-    private MediaPlayer player;
+    private AudioPlayer player;
 
     @Test
     public void playerShouldNotBeNull(){

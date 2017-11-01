@@ -18,6 +18,8 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.11'
     testCompile group: 'junit', name: 'junit', version: junitVersion
     compile("org.springframework:spring-context:${springVersion}")
+    compile "org.springframework:spring-jdbc:$springVersion"
+    compile "com.h2database:h2:$h2Version"
     testCompile("org.springframework:spring-test:${springVersion}")
 }
 

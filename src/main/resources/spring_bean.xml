@@ -13,11 +13,16 @@
        ">
     <context:property-placeholder location="classpath:database.properties"/>
     <bean id="dataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource"
-          p:driverClassName="${database.driver}"
-          p:url="${database.url}"
-          p:username="${database.username}"
-          p:password="" />
+          class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          p:driverClass="${database.driver}"
+          p:jdbcUrl="${database.url}"
+          p:user="${database.username}"
+          p:password=""
+          p:maxPoolSize ="50"
+          p:minPoolSize = "5"
+          p:maxStatements = "100"
+          p:testConnectionOnCheckout = "true"
+    />
     <jdbc:initialize-database data-source="dataSource">
         <jdbc:script location="classpath:schema.sql" />
         <jdbc:script location="classpath:test-data.sql" />

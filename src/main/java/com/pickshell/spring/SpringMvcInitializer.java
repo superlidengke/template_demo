@@ -18,7 +18,7 @@ public class SpringMvcInitializer
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] { "/" };
+		return new String[] { "/" }; //can't be "/*"
 	}
 
 }

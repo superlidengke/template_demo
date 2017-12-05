@@ -1,4 +1,4 @@
-package com.pickshell.domain
+package com.pickshell.mock.domain
 
 import groovy.transform.ToString
 

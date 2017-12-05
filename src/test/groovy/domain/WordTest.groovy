@@ -1,6 +1,6 @@
 package domain
 
-import com.pickshell.domain.Word
+import com.pickshell.mock.domain.Word
 import org.junit.Test
 
 /**

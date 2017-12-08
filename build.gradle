@@ -5,7 +5,7 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: "jacoco"
 
-//apply plugin: 'codenarc'
+apply plugin: 'codenarc'
 
 sourceCompatibility = 1.7
 
@@ -20,17 +20,23 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile group: 'org.mockito', name: 'mockito-core', version: '1.10.19'
 }
+codenarc {
+    toolVersion = '1.0'
+}
 
-/*
 codenarcMain {
     ignoreFailures true
     configFile file('config/codenarc/codenarc.groovy')
-
     maxPriority1Violations 0
     maxPriority2Violations 10
     maxPriority3Violations 20
 }
-*/
+
+codenarcTest {
+    ignoreFailures true
+    configFile file('config/codenarc/codenarc.groovy')
+}
+
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.0.1'

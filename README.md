@@ -1,3 +1,6 @@
+## 2017-12-13
+[Login](http://localhost:8080/template_demo/login)
+junit/password
 ## 2017-11-17
 1.Configure static content handling
 2.control is http://localhost:8080/template_demo/service/hello

@@ -26,6 +26,18 @@ public class MockitoExample {
         assert mockSet.size() == 10
     }
     @Test
+    public void verifyNoInteractions(){
+        Set mockSet = mock(Set.class);
+        verifyZeroInteractions(mockSet)
+    }
+    @Test
+    public void verify_no_more_interaction() {
+        Set mockSet = mock(Set.class);
+        mockSet.size()
+        verify(mockSet).size()
+        verifyNoMoreInteractions(mockSet)
+    }
+    @Test
     public void testSpy() {
         List list = new LinkedList();
         List spy = spy(list);

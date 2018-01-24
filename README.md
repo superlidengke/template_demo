@@ -1,1 +1,1 @@
-Maven web template
+Gradle template

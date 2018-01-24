@@ -9,3 +9,5 @@ Redis v4.0.6
 3. List
 
 ## Store bean by map
+
+## Executing a group of commands inside the MULTI/EXEC transaction

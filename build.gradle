@@ -7,6 +7,14 @@ apply plugin: "jacoco"
 
 apply plugin: 'codenarc'
 
+apply plugin: 'idea'
+idea {
+    module {
+        downloadJavadoc = false
+        downloadSources = true
+    }
+}
+
 sourceCompatibility = 1.7
 
 
